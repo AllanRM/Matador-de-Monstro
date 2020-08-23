@@ -5,7 +5,7 @@ new Vue({
         playerLife: 100,
         monsterLife: 100,
         curas: 3,
-        espec: 5
+        espec: 3
     },
     computed: {
         hasResult () {
@@ -19,7 +19,7 @@ new Vue({
             this.playerLife = 100
             this.monsterLife = 100
             this.curas = 3
-            this.espec = 5
+            this.espec = 3
         },
 
         desistir () {
@@ -30,7 +30,7 @@ new Vue({
 
         atacar (especial) {
             if ((!especial) || ((especial) && (!this.espec == 0))) {
-                this.monsterLife = Math.max(this.monsterLife - this.getRandom(5, especial ? 12 : 10), 0)
+                this.monsterLife = Math.max(this.monsterLife - this.getRandom(4, especial ? 8 : 6), 0)
                 this.atacarMonstro()
                 if (especial) {
                     this.espec -= 1
@@ -39,11 +39,11 @@ new Vue({
         },
 
         atacarMonstro () {
-            this.playerLife = Math.max(this.playerLife - this.getRandom(6, 11), 0)
+            this.playerLife = Math.max(this.playerLife - this.getRandom(4, 8), 0)
         },
 
         curar () {
-            const heart = this.playerLife + this.getRandom(7, 12)
+            const heart = this.playerLife + this.getRandom(4, 8)
 
             if (!this.curas == 0) {
                 this.curas -= 1
