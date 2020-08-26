@@ -59,7 +59,12 @@
                 <button @click="curar" class="btn heal">Curar ( {{ curas }} )</button>
                 <button @click="desistir" class="btn give-up">Desistir</button>
             </template>
-            <button v-else @click="iniciar" class="btn new-game">Iniciar Jogo</button>
+            <template v-else>
+                <h5 class="score">Escolha o nível de dificuldade</h5>
+                <button @click="iniciar(1)" class="btn new-game">Facil</button>
+                <button @click="iniciar(2)" class="btn new-game">Médio</button>
+                <button @click="iniciar(3)" class="btn new-game">Impossível</button>
+            </template>
         </div>
 
 
