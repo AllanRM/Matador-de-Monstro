@@ -106,6 +106,7 @@ html {
     color: #000;
 }
 
+/* Area dos logs */
 .logs ul {
     display: flex;
     flex-direction: column;
