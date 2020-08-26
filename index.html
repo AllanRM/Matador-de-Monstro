@@ -16,7 +16,7 @@
             <span> Regras do jogo </span>
             <ul>
                 <li>Ao atacar, o monstro é atingido com uma força randomica entre 4 e 6.</li>
-                <li>Ao utilizar o atacar especial, o monstro é atingido com uma força randomica entre 3 e 8.</li>
+                <li>Ao utilizar o atacar especial, o monstro é atingido com uma força randomica entre 4 e 8.</li>
                 <li>Após cada ataque ou cura, o monstro contra-ataca com uma força entre 4 e 8</li>
                 <li>A cura aumenta minha vida com um valor randomico entre 3 e 6, porém sou contra-atacado, podendo
                     inclusive diminuir minha vida.</li>
@@ -63,9 +63,11 @@
         </div>
 
 
+        <div v-if="logs.length" class="panel logs">
 
-        <div class="panel logs">
-
+            <ul>
+                <li :class="log.cls" v-for="log in logs">{{ log.text }}</li>
+            </ul>
         </div>
     </div>
     <script src="app.js"></script>
